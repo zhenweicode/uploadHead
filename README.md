@@ -4,7 +4,7 @@ CropBox实现头像裁剪，上传，后台接收，缩放
 采用Spring+SpringMVC+MyBatis+MySQL+Maven+CropBox实现，主要功能：
 - 图片上传，裁剪
 - 预览
-- 后台保存到数据库
+- 后台保存到数据库和文件夹
 - 缩放输出
 
 预览：
