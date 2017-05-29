@@ -1,0 +1,44 @@
+server:
+    port: 8181
+    max-http-header-size: 8192
+    compression:
+        min-response-size: 512
+        enabled: true
+        mime-types: text/html,text/css,text/javascript,application/javascript,image/gif,image/png,image/jpg
+spring:
+    velocity:
+        cache: false
+        charset: UTF-8
+        suffix: .html
+        properties:
+          input.encoding: UTF-8
+          output.encoding: UTF-8
+    http:
+        encoding.charset: UTF-8
+        encoding.force: false
+        multipart:
+          max-file-size: 3MB
+          max-request-size: 10MB
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        username: root
+        password: 123
+        url: jdbc:mysql://localhost:3306/head_blob?useUnicode=true&characterEncoding=utf8&useSSL=false
+        driverClassName: com.mysql.jdbc.Driver
+        initialize: false
+        sql-script-encoding: UTF-8
+        hikari:
+            connection-timeout: 30000
+            maximum-pool-size: 50
+            minimum-idle: 5
+mybatis:
+    type-aliases-package: me.jcala.blog.model,me.jcala.blog.mapper
+    type-handlers-package: org.apache.ibatis.type.LocalDateTypeHandler
+    config-location: classpath:mybatis-config.xml
+#头像放置路径
+headPath:
+    home: C:\\home\\myblog\\pic\\   #由于Chrome浏览器不允许加载本地文件，可以考虑改为相对路径
+    #home: /pic/     #放到工程根目录的下一级pic文件夹下
+#支持图片类型
+pictureLimit:
+    suffix: png,bmp,jpg,jpeg,gif
